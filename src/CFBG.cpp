@@ -884,7 +884,7 @@ void CFBG::SendMessageQueue(BattlegroundQueue* bgQueue, Battleground* bg, PvPDif
 
     if (sWorld->getBoolConfig(CONFIG_BATTLEGROUND_QUEUE_ANNOUNCER_PLAYERONLY))
     {
-        ChatHandler(leader->GetSession()).PSendSysMessage("混排战场 %s (等级: %u - %u). 已排队: %u/%u", bgName.c_str(), q_min_level, q_max_level, qTotal, MinPlayers);
+        ChatHandler(leader->GetSession()).PSendSysMessage("混排战场 {} (等级: {} - {}). 已排队: {}/{}", bgName.c_str(), q_min_level, q_max_level, qTotal, MinPlayers);
     }
     else
     {
@@ -946,7 +946,7 @@ void CFBG::SendMessageQueue(BattlegroundQueue* bgQueue, Battleground* bg, PvPDif
             }
             else
             {
-                ChatHandler(nullptr).SendWorldTextOptional(LANG_BG_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_BG_QUEUE, bgName.c_str(), q_min_level, q_max_level, qTotal, MinPlayers);
+                ChatHandler(nullptr).SendWorldTextOptional(LANG_BG_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_BG_QUEUE, bgName, q_min_level, q_max_level, qTotal, MinPlayers);
             }
         }
     }
